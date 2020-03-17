@@ -75,7 +75,7 @@ contract Tender {
         if (hasBidBefore(msg.sender)) {
             hashedBids[msg.sender] = closedBid(hashedBid, now);
         } else {
-            require(msg.value == (deposit * 1 ether), "Deposit amount is incorrect!");
+            require(msg.value >= (deposit * 1 ether), "Deposit amount is incorrect!");
             hashedBids[msg.sender] = closedBid(hashedBid, now);
             bidExists[msg.sender] = true;
         }
