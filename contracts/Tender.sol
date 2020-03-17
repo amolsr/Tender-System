@@ -30,7 +30,7 @@ contract Tender {
     }
 
     // Bidding duration in minutes
-    constructor(string memory desc, uint biddingDuration, uint revelationDuration, uint depositAmount) public payable {
+    constructor(string memory desc, uint biddingDuration, uint revelationDuration, uint depositAmount) public {
         owner = msg.sender;
         projectDescription = desc;
         biddingEnd = now + (biddingDuration * 1 minutes);
